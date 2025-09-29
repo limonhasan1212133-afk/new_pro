@@ -1,798 +1,759 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shree Hari Export House</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-  <style>
-    :root{
-      --teal: #0a7c6b;
-      --trust-yellow: #f4b400;
-      --star-orange: #fbbc05;
-      --muted: #888;
-      --accent: #3F1F8C;
-    }
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#222; }
+        <title>Truebiz Innovative Concepts Private Limited HTML CSS Template</title>
 
-    /* ===== Header Top ===== */
-    header { border-bottom:1px solid #e6e6e6; }
-    .top-header {
-      display:flex; justify-content:space-between; align-items:flex-start;
-      padding:14px 20px;
-      gap:20px;
-      max-width:1200px; margin:0 auto;
-    }
-    .company-info { display:flex; gap:12px; align-items:flex-start; }
-    .company-info img.logo { width:64px; height:64px; object-fit:contain; border-radius:6px; }
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
 
-    .company-text { display:flex; flex-direction:column; gap:6px; }
-    .company-text h1 { margin:0; font-size:18px; font-weight:700; color:#111; }
-    .company-text .sub { font-size:13px; color:#444; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    /* Top info small row (icons etc) */
-    .top-info {
-      display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:6px;
-    }
-    .top-info .item { display:flex; gap:8px; align-items:center; font-size:13px; color:#333; background:transparent; padding:0 4px; }
-    .top-info .item i {
-      display:inline-flex; align-items:center; justify-content:center;
-      width:18px; height:18px; font-size:14px;
-    }
-    /* specific colors */
-    .top-info .loc i { color:var(--muted); }             /* location grey */
-    .top-info .gst i { color:var(--teal); }              /* gst teal */
-    .top-info .trust i { color:var(--trust-yellow); }    /* trust yellow */
-    .top-info .mobile i, .top-info .email i, .top-info .yrs i { color:var(--teal); }
-    .top-info .rating i { color:var(--star-orange); }    /* stars orange */
-    .top-info .response i { color:var(--teal); }
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
 
-    /* Contact buttons */
-    .contact-buttons { display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
-    .btn {
-      display:inline-flex; align-items:center; gap:8px; padding:9px 14px;
-      border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;
-      border:1px solid transparent;
-    }
-    .btn-call { color:var(--teal); border-color:var(--teal); background:transparent; }
-    .btn-contact { background:var(--teal); color:#fff; box-shadow:0 2px 6px rgba(10,124,107,0.12); }
+        <link href="css/tooplate-clean-work.css" rel="stylesheet">
 
-    /* ===== Nav ===== */
-    nav { background:var(--accent); padding:10px 20px; }
-    .nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:20px; }
-    nav a { color:#fff; text-decoration:none; padding:8px 10px; font-size:14px; }
-    nav a.active { border-bottom:3px solid #fff; font-weight:700; }
-    .nav-search { margin-left:auto; }
-    .nav-search input { padding:6px 10px; border-radius:4px; border:1px solid #ccc; font-size:14px; }
+    </head>
+    
+    <body>
 
-    /* ===== Banner / Slider area ===== */
-    .banner { display:flex; justify-content:center; gap:14px; padding:18px 20px; max-width:1200px; margin:18px auto; }
-    .banner img { width:32%; border-radius:6px; border:1px solid #eee; object-fit:cover; }
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <i class="bi-house-fill me-2"></i>
+                            One-Stop Cleaning Service
+                        </p>
 
-    /* ===== About Section ===== */
-    .about { max-width:1000px; margin:20px auto; padding:0 20px; }
-    .about h2 { color:var(--accent); font-size:20px; margin-bottom:8px; }
-    .about p { line-height:1.6; color:#333; margin:0; }
+                        <p class="d-flex d-lg-block d-md-block d-none me-4 mb-0">
+                            <i class="bi-clock-fill me-2"></i>
+                            <strong class="me-2">Mon - Fri</strong> 8:00 AM - 5:30 PM
+                        </p>
 
-    /* ===== Company Details Grid (icons) ===== */
-    .company-details { max-width:1200px; margin:24px auto; padding:0 20px; }
-    .detail-grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap:18px;
-    }
-    .detail-box {
-      display:flex; gap:12px; align-items:center;
-      border-radius:8px; padding:12px; background:#fafafa; border:1px solid #f0f0f0;
-    }
-    .detail-box .icon-wrap {
-      width:56px; height:56px; border-radius:8px; display:flex; align-items:center; justify-content:center;
-      background:#fff; border:1px solid #eee;
-    }
-    .detail-box .icon-wrap i { font-size:22px; color:var(--teal); }
-    .detail-box .text { font-size:14px; color:#333; line-height:1.2; }
-    .detail-box .text b { display:block; font-weight:700; margin-bottom:4px; }
+                        <p class="site-header-icon-wrap text-white d-flex mb-0 ms-auto">
+                            <i class="site-header-icon bi-whatsapp me-2"></i>
 
-    /* ===== Services ===== */
-    .services { max-width:1000px; margin:20px auto; padding:0 20px; }
-    .services h2 { color:var(--accent); margin-bottom:10px; }
-    .services ul { padding-left:20px; color:#333; }
+                            <a href="tel: 110-220-9800" class="text-white">
+                                616 638 4536
+                            </a>
+                        </p>
+                    </div>
 
-    /* responsive tweaks */
-    @media (max-width:800px){
-      .company-text h1 { font-size:16px; }
-      .top-header { padding:12px; gap:10px; }
-      .contact-buttons { align-items:flex-start; }
-      .banner img { width:100%; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header Top -->
-  <header>
-    <div class="top-header">
-      <div class="company-info">
-        <!-- replace logo.png with your logo -->
-        <img class="logo" src="https://i.postimg.cc/cJmsRtf9/it-Mehedy-Hasan-Limon.png" alt="Innuvis Logo">
-
-        <div class="company-text">
-          <h1>Shree Hari Export House</h1>
-
-          <div class="sub">
-            <!-- short meta row -->
-            <div class="top-info">
-              <div class="item loc"><i class="fas fa-map-marker-alt"></i>Bhopal, Madhya Pradesh</div>
-              <div class="item gst"><i class="fas fa-id-badge"></i> GST - 24ADSFS7838P1ZX</div>
-              <div class="item trust"><i class="fas fa-shield-alt"></i> <strong>TrustSEAL</strong> Verified</div>
-              <div class="item mobile"><i class="fas fa-mobile-alt"></i> Mobile</div>
-              <div class="item email"><i class="fas fa-envelope"></i> Email</div>
-              <div class="item yrs"><i class="fas fa-user-clock"></i> 5 yrs</div>
-              <div class="item rating"><i class="fas fa-star"></i> 4.1 (24)</div>
-              <div class="item response"><i class="fas fa-phone"></i> 83% Response rate</div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </header>
 
-      <div class="contact-buttons">
-        <a class="btn btn-call" href="tel:+918048251710"><i class="fas fa-phone"></i> Call +91-8048251710</a>
-        <a class="btn btn-contact" href="#"><i class="fas fa-paper-plane"></i> Contact Supplier</a>
-      </div>
-    </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/bubbles.png" class="logo img-fluid" alt="">
 
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-inner" style="max-width:1200px;margin:0 auto;">
-        <a class="active" href="#">Home</a>
-        <a href="#">Our Services</a>
-        <a href="#">About Us</a>
-        <a href="#">Photos</a>
-        <a href="#">Contact Us</a>
+                    <span class="ms-2">Truebiz Innovative Concepts Private Limited</span>
+                </a>
 
-        <div class="nav-search">
-          <input type="text" placeholder="Search Products/Services" />
-        </div>
-      </div>
-    </nav>
-  </header>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-  <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Banner Section</title>
-  <style>
-    .banner {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-      background-color: #f9f9f9;
-    }
-    .banner img {
-      width: 220px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .banner img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    }
-  </style>
-</head>
-<body>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
 
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Live Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #fff;
-      margin: 0;
-      padding: 20px;
-    }
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
 
-    .header {
-      font-size: 26px;
-      font-weight: bold;
-      transition: color 1s ease-in-out;
-    }
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#section_5" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
-    .clock {
-      font-size: 50px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="services.html">Our Services</a></li>
 
-    .date {
-      font-size: 20px;
-      margin-bottom: 20px;
-      color: #333;
-      font-weight: 500;
-    }
+                                <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
 
-    .dashboard {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+                                <li><a class="dropdown-item" href="page-404.html">Page 404</a></li>
+                            </ul>
+                        </li>
 
-    .box {
-      border: none;
-      padding: 20px;
-      width: 220px;
-      background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
 
-    .box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    }
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-bg-white btn" href="#">Get started</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    .label {
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: 18px;
-      color: #444;
-    }
+        <main>
 
-    .value {
-      font-size: 36px;
-      font-family: 'Courier New', monospace;
-      font-weight: bold;
-      color: #00bcd4;
-      transition: color 0.4s ease-in-out;
-    }
+            <section class="hero-section hero-section-full-height d-flex justify-content-center align-items-center">
+                <div class="section-overlay"></div>
 
-    .footer {
-      margin-top: 40px;
-    }
+                <div class="container">
+                    <div class="row">
 
-    .logBar {
-      margin: 15px auto;
-      padding: 15px 25px;
-      border-radius: 12px;
-      font-size: 24px;
-      font-weight: bold;
-      max-width: 80%;
-      animation: fadeIn 0.8s ease;
-    }
+                        <div class="col-lg-7 col-12 text-center mx-auto">
+                            <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                                <span>We Truebiz Innovative Concepts Private Limited</span>
+                                <span class="cd-words-wrapper">
+                                    <b class="is-visible">House</b>
+                                    <b>Office</b>
+                                    <b>Kitchen</b>
+                                </span>
+                            </h1>
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+                            <a class="custom-btn btn button button--atlas smoothscroll me-3" href="#intro-section">
+                                <span>Introduction</span>
 
-    .offerBar {
-      background: #ff9800;
-      color: white;
-      font-size: 28px;
-    }
+                                <div class="marquee" aria-hidden="true">
+                                    <div class="marquee__inner">
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                        <span>Introduction</span>
+                                    </div>
+                                </div>
+                            </a>
 
-    .winnerBar {
-      background: #4caf50;
-      color: white;
-      font-size: 24px;
-    }
+                            <a class="custom-btn custom-border-btn custom-btn-bg-white btn button button--pan smoothscroll" href="#services-section">
+                                <span>Explore Services</span>
+                            </a>
+                        </div>
 
-    .successBar {
-      background: #2196f3;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+                    </div>
+                </div>
 
-  <div class="header" id="headerText">الله عز وجل ومحمد رسوله</div>
-  <div class="clock" id="clock">00:00:00</div>
-  <div class="date" id="date">Loading date...</div>
-
-  <h2 style="font-size:22px; font-weight:bold; color:#222;">LIVE WEBSITE RUNNING VIEW</h2>
-
-  <div class="dashboard">
-    <div class="box">
-      <div class="label">Total API Sell</div>
-      <div class="value" id="apiSell">0</div>
-    </div>
-    <div class="box">
-      <div class="label">Available API</div>
-      <div class="value" id="availableApi">400</div>
-    </div>
-    <div class="box">
-      <div class="label">Conversation View</div>
-      <div class="value" id="conversations">0</div>
-    </div>
-    <div class="box">
-      <div class="label">Order Pending</div>
-      <div class="value" id="orders">0</div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <div id="mainLog"></div>
-  </div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,224L40,229.3C80,235,160,245,240,250.7C320,256,400,256,480,240C560,224,640,192,720,176C800,160,880,160,960,138.7C1040,117,1120,75,1200,80C1280,85,1360,139,1400,165.3L1440,192L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+            </section>
 
 
-  <script>
-    // Clock and date
-    function updateTime() {
-      const now = new Date();
-      document.getElementById('clock').textContent = now.toLocaleTimeString();
-      document.getElementById('date').textContent = now.toLocaleDateString(undefined, {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-      });
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
+            <section class="intro-section" id="intro-section">
+                <div class="container">
+                    <div class="row justify-content-lg-center align-items-center">
 
-    // Color changing Islamic text
-    const header = document.getElementById("headerText");
-    const colors = ["#e91e63", "#009688", "#3f51b5", "#ff5722", "#607d8b"];
-    let colorIndex = 0;
-    setInterval(() => {
-      header.style.color = colors[colorIndex];
-      colorIndex = (colorIndex + 1) % colors.length;
-    }, 3000);
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Reliable &amp; Fast Cleaning <br> Service</h2>
 
-    // API Sell logic with random availability
-    const apiSell = document.getElementById("apiSell");
-    const availableApi = document.getElementById("availableApi");
+                            <p><a href="#">Truebiz Innovative Concepts Private Limited</a> is a forward-thinking company committed to delivering smart, scalable, and impactful digital solutions. With a focus on innovation and customer-centric design, Truebiz helps businesses transform their communication strategies. As we prepare to integrate WhatsApp Business API, our goal is to offer seamless, secure, and highly responsive customer engagement solutions — ensuring faster support, real-time updates, and personalized interactions that build trust and drive growth.<a rel="
+                        </div>
 
-    let sellCount = 0;
-    let stock = [200,300,400,500][Math.floor(Math.random()*4)];
-    availableApi.textContent = stock;
+                        <div class="col-lg-6 col-12 custom-block-wrap>
+                            <img src="images/male-wearing-apron-female-white-t-shirt-smiling-broadly-being-glad-clean.png" class="img-fluid">
 
-    function simulateSell() {
-      if(stock>0) {
-        const sold = Math.floor(Math.random()*3)+1; // 1–3
-        if(stock-sold<0) return;
-        sellCount += sold;
-        stock -= sold;
-        apiSell.textContent = sellCount;
-        availableApi.textContent = stock;
-        apiSell.style.color = colors[Math.floor(Math.random()*colors.length)];
-      }
-    }
-    setInterval(simulateSell, 4000);
+                            <div class="custom-block d-flex flex-column">
+                                <h6 class="text-white mb-3">Need Help? <br> Please call us:</h6>
 
-    // Conversion Simulation with bar
-    const mainLog = document.getElementById("mainLog");
-    const businesses = ["Zenith Sales","Alpha Corp","Delta Systems","Skyline Ltd","Prime Tech"];
+                                <p class="d-flex mb-0">
+                                    <i class="bi-telephone-fill custom-icon me-2"></i>
 
-    function showBar(msg, type) {
-      mainLog.innerHTML = `<div class="logBar ${type}">${msg}</div>`;
-    }
+                                    <a href="tel: 110-220-9800">
+                                        110-220-9800
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
 
-    function simulateConversions() {
-      const batch = Math.floor(Math.random()*9000)+1000; // 1k – 10k
-      const biz = businesses[Math.floor(Math.random()*businesses.length)];
-      showBar(`${batch.toLocaleString()} conversions SUCCESS by ${biz}`, "successBar");
-    }
-    setInterval(simulateConversions, 15000);
+                    </div>
+                </div>
+            </section>
 
-    // Offer once in 7 days
-    let offerShown = false;
-    setTimeout(() => {
-      if(!offerShown){
-        showBar("🎉 Today 100,000 free conversions will be given to 10 users!", "offerBar");
-        offerShown = true;
-        setTimeout(()=>{
-          for(let i=1;i<=10;i++){
-            setTimeout(()=>{
-              showBar(`🎁 Winner ${i}: User${Math.floor(Math.random()*1000)}`, "winnerBar");
-            }, i*2000);
-          }
-        }, 5000);
-      }
-    }, 10000);
 
-  </script>
-</body>
+            <section class="services-section section-padding section-bg" id="services-section">                
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h2 class="mb-4">Our best offers</h2>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/people-taking-care-office-cleaning.jpg" class="services-image img-fluid" alt="">
+                                                <img src="images/services/person-taking-care-office.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-cash me-2"></i>
+                                                            $820
+                                                        </p>
+
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-clock-fill me-2"></i>
+                                                            5 hrs
+                                                        </p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Office Cleaning</a>
+                                            </h4>
+
+                                            <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Learn More</span>
+
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/young-smiling-woman-wearing-rubber-gloves-cleaning-stove.jpg" class="services-image img-fluid" alt="">
+                                                <img src="images/services/woman-holding-rag-detergent-cleaning-cooker.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-cash me-2"></i>
+                                                            $640
+                                                        </p>
+
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-clock-fill me-2"></i>
+                                                            4 hrs
+                                                        </p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Kitchen Cleaning</a>
+                                            </h4>
+
+                                            <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Learn More</span>
+
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb mb-lg-0">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/man-polishing-car-inside-car-service.jpg" class="services-image img-fluid" alt="">
+                                                <img src="images/services/man-polishing-car-inside.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-cash me-2"></i>
+                                                            $240
+                                                        </p>
+
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-clock-fill me-2"></i>
+                                                            2 hrs
+                                                        </p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Car Washing</a>
+                                            </h4>
+
+                                            <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                </div>
+
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Learn More</span>
+
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="services-thumb mb-lg-0">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-12">
+                                        <div class="services-image-wrap">
+                                            <a href="services-detail.html">
+                                                <img src="images/services/professional-industrial-cleaner-protective-uniform-cleaning-floor-food-processing-plant.jpg" class="services-image img-fluid" alt="">
+                                                <img src="images/services/close-up-mop-cleaning-industrial-plant-floor.jpg" class="services-image services-image-hover img-fluid" alt="">
+
+                                                <div class="services-icon-wrap">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-cash me-2"></i>
+                                                            $6,800
+                                                        </p>
+
+                                                        <p class="text-white mb-0">
+                                                            <i class="bi-clock-fill me-2"></i>
+                                                            30 hrs
+                                                        </p>
+                                                    </div>                                                    
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-7 col-md-7 col-12 d-flex align-items-center">
+                                        <div class="services-info mt-4 mt-lg-0 mt-md-0">
+                                            <h4 class="services-title mb-1 mb-lg-2">
+                                                <a class="services-title-link" href="services-detail.html">Factory Cleaning</a>
+                                            </h4>
+
+                                            <p>Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
+
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <div class="reviews-icons">
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star-fill"></i>
+                                                    <i class="bi-star"></i>
+                                                </div>
+
+                                                <a href="services-detail.html" class="custom-btn btn button button--atlas mt-2 ms-auto">
+                                                    <span>Learn More</span>
+
+                                                    <div class="marquee" aria-hidden="true">
+                                                        <div class="marquee__inner">
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                            <span>Learn More</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="testimonial-section section-padding section-bg">
+                <div class="section-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12 text-center">
+                            <h2 class="text-white mb-4">Happy Customers</h2>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="featured-block">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-01.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Marie</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Best Cleaning Service Provider Ipsum dolor sit consectetur kengan</p>
+                            </div>
+
+                            <div class="featured-block mb-lg-0">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-02.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Nana</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="featured-block">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-03.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Elon</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            </div>
+
+                            <div class="featured-block mb-lg-0">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-04.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Josh</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-12">
+                            <div class="featured-block">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-05.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Katie</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                            </div>
+
+                            <div class="featured-block mb-lg-0">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="images/avatar/happy-customer-06.jpg" class="avatar-image img-fluid">
+
+                                    <div class="ms-3">
+                                        <h4 class="mb-0">Shai</h4>
+
+                                        <div class="reviews-icons mb-1">
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star-fill"></i>
+                                            <i class="bi-star"></i>
+                                            <i class="bi-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="partners-section">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-12 col-12">
+                            <h4 class="partners-section-title bg-white shadow-lg">Trusted by companies</h4>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <img src="images/partners/toprak-leasing.svg" class="partners-image img-fluid">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <img src="images/partners/glorix.svg" class="partners-image img-fluid">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <img src="images/partners/woocommerce.svg" class="partners-image img-fluid">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <img src="images/partners/rolf-leasing.svg" class="partners-image img-fluid">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-6">
+                            <img src="images/partners/unilabs.svg" class="partners-image img-fluid">
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex align-items-center mb-4 pb-2">
+                        <div>
+                            <img src="images/bubbles.png" class="logo img-fluid" alt="">
+                        </div>
+
+                        <ul class="footer-menu d-flex flex-wrap ms-5">
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">About Us</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blog</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Reviews</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                        <h5 class="site-footer-title mb-3">Our Services</h5>
+
+                        <ul class="footer-menu">
+                            <li class="footer-menu-item">
+                                <a href="#" class="footer-menu-link">
+                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                    House Cleaning
+                                </a>
+                            </li>
+
+                            <li class="footer-menu-item">
+                                <a href="#" class="footer-menu-link">
+                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                    Car Washing
+                                </a>
+                            </li>
+
+                            <li class="footer-menu-item">
+                                <a href="#" class="footer-menu-link">
+                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                    Laundry
+                                </a>
+                            </li>
+
+                            <li class="footer-menu-item">
+                                <a href="#" class="footer-menu-link">
+                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                    Office Cleaning
+                                </a>
+                            </li>
+
+                            <li class="footer-menu-item">
+                                <a href="#" class="footer-menu-link">
+                                    <i class="bi-chevron-double-right footer-menu-link-icon me-2"></i>
+                                    Toilet Cleaning
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+                        <h5 class="site-footer-title mb-3">Office</h5>
+
+                        <p class="text-white d-flex mt-3 mb-2">
+                            <i class="bi-geo-alt-fill me-2"></i>
+                            A16701 SW 72nd Ave, Palmetto Bay FL 33157-2500
+                        </p>
+
+                        <p class="text-white d-flex mb-2">
+                            <i class="bi-telephone-fill me-2"></i>
+
+                            <a href="tel: 110-220-9800" class="site-footer-link">
+                                616 638 4536
+                            </a>
+                        </p>
+
+                        <p class="text-white d-flex">
+                            <i class="bi-envelope-fill me-2"></i>
+
+                            <a href="mailto:support@truebizinnovativeconceptsprivatelimited.store" class="site-footer-link">
+                            support@truebizinnovativeconceptsprivatelimited.store
+                            </a>
+                        </p>
+
+                        <ul class="social-icon mt-4">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link button button--skoll">
+                                    <span></span>
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link button button--skoll">
+                                    <span></span>
+                                    <span class="bi-facebook"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link button button--skoll">
+                                    <span></span>
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-6 mt-3 mt-lg-0 mt-md-0">
+                        <div class="featured-block">
+                                  <h5 class="text-white mb-3">Service Hours</h5>
+
+                                  <strong class="d-block text-white mb-1">Mon - Fri</strong>
+
+                                  <p class="text-white mb-3">8:00 AM - 5:30 PM</p>
+                                  
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="site-footer-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <p class="copyright-text mb-0">Copyright © 2036 Truebiz Innovative Concepts Private Limited</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.backstretch.min.js"></script>
+        <script src="js/counter.js"></script>
+        <script src="js/countdown.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/animated-headline.js"></script>
+        <script src="js/custom.js"></script>
+
+    </body>
 </html>
-
-
-</body>
-</html>
-
-  <!-- About -->
-  <section class="about">
-    <h2>About Us</h2>
-    <p><b>Established in the year 2010 at Morvi Gujarat India we Shree Hari Export House  are a Partnership Firm engaged in manufacturing and exporting a qualitative assortment of Wash Basins Bathroom Urinals and Ceramic Tiles etc Under the supervision of our mentor Kishore Patel we have achieved reputed position in industry. We are exporting our products in African country Europe  Sri lanka,America Dubai Iraq etc.</p>
-  </section>
-
-  <!-- Company Details Grid -->
-  <section class="company-details">
-    <div class="detail-grid">
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-briefcase"></i></div>
-        <div class="text"><b>Nature of Business</b> Service Provider and Others</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-balance-scale"></i></div>
-        <div class="text"><b>Legal Status of Firm</b> Proprietorship</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
-        <div class="text"><b>Annual Turnover</b> 5 - 25 Crr</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-calendar-alt"></i></div>
-        <div class="text"><b>GST Registration Date</b> 27-08-2018</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-users"></i></div>
-        <div class="text"><b>Total Number of Employees</b> 11 to 25 People</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-passport"></i></div>
-        <div class="text"><b>Import Export Code (IEC)</b> ADSFS7838P</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-receipt"></i></div>
-        <div class="text"><b>GST Number</b> 24ADSFS7838P1ZX</div>
-      </div>
-
-      <div class="detail-box">
-        <div class="icon-wrap"><i class="fas fa-certificate"></i></div>
-        <div class="text"><b>IndiaMART Certification</b> Trust Seal Verified</div>
-      </div>
-    </div>
-  </section>
-
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Services</title>
-
-  <!-- Google Stylish Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-    .services-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .services-section h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-      color: #111;
-      display: inline-block;
-      border: 3px solid red;
-      padding: 5px 20px;
-      border-radius: 8px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .service-card {
-      background: #fff;
-      border: 2px solid red;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      height: 360px; /* fixed height for equal size */
-    }
-    .service-card:hover {
-      transform: translateY(-5px);
-    }
-    .service-card img {
-      width: 80px;
-      margin-bottom: 15px;
-    }
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #0073e6;
-      text-align: center;
-      min-height: 48px;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: #444;
-      text-align: center;
-      flex-grow: 1;
-      min-height: 60px;
-    }
-    .service-card a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 8px 18px;
-      background: #0073e6;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      border: 2px solid red;
-      border-radius: 6px;
-      transition: background 0.3s ease, transform 0.2s ease;
-    }
-    .service-card a:hover {
-      background: #005bb5;
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-
-<section class="services-section">
-  <h2>Our Services</h2>
-  <div class="services-grid">
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/sms.png" alt="SMS Services">
-      <h3>SMS Services</h3>
-      <p>Online Bulk SMS Service, Bulk SMS API Service, SMS Integration Services.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/flash-on.png" alt="SMS Alert">
-      <h3>SMS Alert Service</h3>
-      <p>Flash SMS, True Caller SMS Service, Short Code SMS Service.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/whatsapp--v1.png" alt="WhatsApp Marketing">
-      <h3>WhatsApp Marketing Services</h3>
-      <p>WhatsApp Green Tick Service, WhatsApp Marketing API, WhatsApp Business Solution.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/facebook-like.png" alt="Social Media Marketing">
-      <h3>Social Media Marketing</h3>
-      <p>Voters Sentiment Analysis, Social Media Ad Campaign, Engagement Boosting.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/whatsapp.png" alt="Election WhatsApp Marketing">
-      <h3>WhatsApp Marketing (Election)</h3>
-      <p>Election WhatsApp Campaigns, Political Outreach, Targeted Voter Communication.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/flash-on.png" alt="SMS Gateway">
-      <h3>SMS Gateway Service</h3>
-      <p>Bulk SMS Gateway, High Delivery Rate, API Integration.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/sms.png" alt="Bulk SMS Software">
-      <h3>SMS Marketing Services</h3>
-      <p>Bulk SMS Software, SMS Campaign Management, Targeted Promotions.</p>
-      <a href="#">View Details</a>
-    </div>
-
-    <div class="service-card">
-      <img src="https://img.icons8.com/color/96/new-post.png" alt="Email Marketing">
-      <h3>Email Marketing Service</h3>
-      <p>Email Campaigns, Automated Workflows, Professional Templates.</p>
-      <a href="#">View Details</a>
-    </div>
-
-  </div>
-</section>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Section</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-
-  <style>
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-    }
-
-    .section {
-      background-color: #28268c;
-      text-align: center;
-      padding: 20px 0;
-      color: white;
-      font-size: 26px;
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 50px 60px;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .image-box img {
-      width: 300px;
-      border-radius: 12px;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
-      transition: 0.3s ease;
-      opacity: 0.6;
-    }
-
-    .image-box img:hover {
-      transform: scale(1.02);
-      opacity: 0.9;
-    }
-
-    .quote-box {
-      flex: 1;
-      max-width: 500px;
-      text-align: center;
-      padding: 30px 30px;
-      background-color: #fff;
-      border: 2px solid red;
-      border-radius: 10px;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .quote-box .quote {
-      font-family: 'Lucida Calligraphy', cursive;
-      font-size: 20px;
-      color: #444;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    .quote-box .quote span {
-      color: #8b0000; /* dark red */
-    }
-
-    .quote-box .author {
-      font-family: 'Dancing Script', cursive;
-      font-size: 17px;
-      color: #555;
-      margin-top: 12px;
-    }
-
-    .contact-box {
-      max-width: 340px;
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-      text-align: left;
-      font-size: 15px;
-    }
-
-    .contact-box h3 {
-      color: #28268c;
-      margin-bottom: 16px;
-      font-size: 22px;
-    }
-
-    .contact-box p {
-      margin: 8px 0;
-      font-size: 15px;
-      line-height: 1.6;
-      color: #444;
-    }
-
-    .contact-box strong {
-      color: #000;
-    }
-
-    .contact-box a {
-      color: #009900;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .email-button {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 10px 18px;
-      background-color: #eee;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 14px;
-      color: #333;
-      transition: 0.2s ease;
-    }
-
-    .email-button:hover {
-      background-color: #ddd;
-    }
-  </style>
-
-  <div class="section">GET IN TOUCH WITH US</div>
-
-  <div class="container">
-    <!-- Left Image -->
-    <div class="image-box">
-      <img src="https://i.postimg.cc/KY9WGYNk/websit-image-Photoroom.png" alt="Md Mehedy Hasan Limon" />
-    </div>
-
-    <!-- Center Quote -->
-    <div class="quote-box">
-      <div class="quote">
-        <span>“Scorn is the mirror where I meet my unyielding self.”</span><br>
-        <span>“अपमान वह दर्पण है जिसमें मैं अपने अडिग स्वरूप से मिलता हूँ।”</span>
-      </div>
-      <div class="author">— Md Mehedy Hasan Limon</div>
-    </div>
-
-    <!-- Right Contact Box -->
-    <div class="contact-box">
-      <h3>📍 REACH US</h3>
-      <p><strong>NATASHA RAJVAIDYA</strong></p>
-      <p>Second Floor, Shop No.1, Survey No.95 P2, Plot No.2,Near Nilkanth Park Society, Morbi Halvad Road, Mahendra Nagar Bus Stand
-      ,<br>Mahendra Nagar<br>Gujarat 363642, Morbi, India</p>
-      <p>📍 <a href="#">Get Directions</a></p>
-      <p>👤 <span style="color:#6a0dad;">Pankaj Sharma</span> <span style="font-size: 14px;">(Business Head)</span></p>
-      <p>📞 Call: <a href="tel:+918048251710">+91-8048251710</a></p>
-      <p>✅ <span style="color:#228B22;">83% Call Response Rate</span></p>
-      <div class="email-button">📩 Send Email</div>
-    </div>
-  </div>
-
-</body>
-</html>
-
-
-  <!-- Footer -->
-  <footer style="background:#222;color:#fff;padding:18px 20px;margin-top:30px;text-align:center;">
-    <div style="max-width:1200px;margin:0 auto;">
-      <p style="margin:6px 0;">© 2025 TRUEBIZ INNOVATIVE CONCEPTS PRIVATE LIMITED. All Rights Reserved.  
-        Official WhatsApp API Partner for Shree Hari Export House. Developed and Managed by TRUEBIZ INNOVATIVE CONCEPTS PRIVATE LIMITED</p>
-      <p style="margin:6px 0;">Terms of Use | Privacy Policy</p>
-      <p style="margin:6px 0;">Developed and Managed by TRUEBIZ INNOVATIVE CONCEPTS PRIVATE LIMITED</p>
-    </div>
-  </footer>
-
-</body>
-</html>
-
-
-
